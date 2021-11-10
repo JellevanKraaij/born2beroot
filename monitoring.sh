@@ -9,4 +9,5 @@ wall "	#Architecture: $(uname -a)
 	#LVM use: $(if [[ $(lsblk | grep 'lvm') ]]; then echo yes; else echo no; fi)
 	#Connexions TCP : $(cat /proc/net/sockstat | grep 'TCP:' | awk '{print $3}') ESTABLISHED
 	#User log: $(users | wc -w)
-	#Network: IP $(hostname -I) ($(cat /sys/class/net/*/address | grep -v '00:00:00:00:00:00' | tr '\n' ' ' | xargs))"
+	#Network: IP $(hostname -I) ($(cat /sys/class/net/*/address | grep -v '00:00:00:00:00:00' | tr '\n' ' ' | xargs))
+	#Sudo: $(find /var/log/sudo/ -name 'log' | wc -l) cmd"
